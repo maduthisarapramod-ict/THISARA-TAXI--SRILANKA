@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thisara Taxi | Sri Lanka Tours & Travels</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* CSS Reset & Basic Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; color: #333; background-color: #f4f7f6; overflow-x: hidden; }
+        h1, h2, h3 { color: #1a1a1a; }
+        p { line-height: 1.7; color: #555; }
+        a { text-decoration: none; transition: 0.3s; }
+
+        /* Google Translate Fix */
+        body { top: 0 !important; }
+        .skiptranslate iframe { display: none !important; }
+
+        /* Navigation Header */
+        header { 
+            background: rgba(255, 255, 255, 0.98); 
+            padding: 15px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            flex-wrap: wrap; 
+            gap: 10px;
+        }
+        .contact-btn { background: #e67e22; color: white; padding: 10px 20px; border-radius: 50px; font-weight: bold; font-size: 15px; display: inline-block; }
+        .contact-btn:hover { background: #d35400; }
+
+        /* UDA SLIDESHOW (HERO SECTION - Ali & Beach Photos) */
+        .hero { 
+            height: 90vh; 
+            color: white; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            animation: slideShow 20s infinite;
+            padding: 0 20px;
+        }
+
+        /* Continuous Smooth Slideshow Fix - Aluth Photos */
+        @keyframes slideShow {
+            0%, 20% { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=1920'); } /* Beach */
+            25%, 45% { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1588693959664-96ddf4116531?q=80&w=1920'); } /* Elephants */
+            50%, 70% { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1920'); } /* Mirissa Beach */
+            75%, 95% { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1588614959060-4d144f28b207?q=80&w=1920'); } /* Ella */
+            100% { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=1920'); } /* Beach Back */
+        }
+
+        .hero h1 { font-size: clamp(40px, 6vw, 65px); color: #f39c12; margin-bottom: 10px; font-weight: 800; text-shadow: 2px 4px 10px rgba(0,0,0,0.8); }
+        .hero p { font-size: clamp(16px, 3vw, 24px); color: white; font-weight: 600; text-shadow: 1px 2px 5px rgba(0,0,0,0.8); margin-bottom: 30px; }
+
+        /* Main Sections */
+        .container { max-width: 1200px; margin: auto; padding: 80px 20px; text-align: center; }
+        .section-title { font-size: clamp(28px, 4vw, 40px); margin-bottom: 15px; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 5px; background: #e67e22; margin: 15px auto; }
+
+        /* Vehicle Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: 0.4s; }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 220px; object-fit: cover; }
+        .card-body { padding: 25px; }
+        .card-body h3 { color: #e67e22; font-size: 22px; margin-bottom: 10px; }
+
+        /* Services Section */
+        .services { background: #1a1a1a; color: white; padding: 80px 20px; text-align: center; }
+        .services h2 { color: white; }
+        .services p { color: #ccc; }
+        .service-box { padding: 30px; background: #262626; border-radius: 15px; transition: 0.3s; }
+        .service-box:hover { background: #333; transform: translateY(-5px); }
+        .service-box i { font-size: 45px; color: #f39c12; margin-bottom: 15px; }
+        .service-box h3 { color: white; margin-bottom: 10px; }
+
+        /* Tourism Gallery - Aluth Ali saha Beach Photos */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .gallery-grid img { width: 100%; height: 250px; object-fit: cover; border-radius: 15px; transition: 0.3s; }
+        .gallery-grid img:hover { transform: scale(1.03); opacity: 0.9; }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Footer */
+        footer { background: #111; color: #888; padding: 50px 20px; text-align: center; }
+        .footer-call { font-size: clamp(24px, 4vw, 35px); color: #f39c12; font-weight: bold; margin: 15px 0; display: block; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="google_translate_element"></div>
+        <a href="tel:+94711827226" class="contact-btn"><i class="fa fa-phone"></i> 071 182 7226</a>
+    </header>
+
+    <section class="hero">
+        <h1>THISARA TAXI</h1>
+        <p>Your Trusted Travel Partner in Sri Lanka</p>
+        <a href="https://wa.me/94711827226" class="contact-btn" style="font-size: 18px; padding: 15px 35px; background: #25d366; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+            <i class="fab fa-whatsapp"></i> Book via WhatsApp
+        </a>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">Our Luxury Fleet</h2>
+        <p>Choose the best vehicle for your journey.</p>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1590362891991-f20dc238714c?q=80&w=800" alt="Toyota Prius">
+                <div class="card-body">
+                    <h3>Toyota Prius</h3>
+                    <p>High comfort, hybrid luxury for long distance tours.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800" alt="Toyota Aqua">
+                <div class="card-body">
+                    <h3>Toyota Aqua</h3>
+                    <p>Economical and smooth, perfect for couples and city rides.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&w=800" alt="Suzuki WagonR">
+                <div class="card-body">
+                    <h3>Suzuki WagonR</h3>
+                    <p>Budget-friendly and spacious for small families.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="services">
+        <div class="container" style="padding: 0;">
+            <h2 class="section-title">Our Services</h2>
+            <p style="margin-bottom: 40px;">Professional transport solutions tailored for you.</p>
+            <div class="grid">
+                <div class="service-box">
+                    <i class="fa fa-plane-departure"></i>
+                    <h3>Airport Transfers</h3>
+                    <p>24/7 Reliable pickups and drops from Colombo Airport.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fa fa-map-marked-alt"></i>
+                    <h3>Wildlife Safari & Tours</h3>
+                    <p>Experience Sri Lanka's wildlife and beautiful beaches with us.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fa fa-clock"></i>
+                    <h3>City Hires</h3>
+                    <p>Short distance and daily hires at the best rates.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">Discover Sri Lanka</h2>
+        <p>Let us take you to the most amazing beaches and wildlife destinations.</p>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=800" alt="Sri Lanka Beach">
+            <img src="https://images.unsplash.com/photo-1588693959664-96ddf4116531?q=80&w=800" alt="Sri Lankan Elephant">
+            <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800" alt="Mirissa Beach">
+            <img src="https://images.unsplash.com/photo-1588614959060-4d144f28b207?q=80&w=800" alt="Ella Srilanka">
+        </div>
+    </div>
+
+    <a href="https://wa.me/94711827226" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <h2>Thisara Taxi Lanka</h2>
+        <p>Available 24 Hours / 7 Days a week</p>
+        <a href="tel:+94711827226" class="footer-call">071 182 7226</a>
+        <p>&copy; 2026 Thisara Taxi. All Rights Reserved.</p>
+    </footer>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', 
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
